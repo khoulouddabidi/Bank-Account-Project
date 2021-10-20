@@ -1,0 +1,22 @@
+
+<h2 class="row">Account client : <span *ngIf="client" class="text-success">connected</span></h2>
+
+<br>
+
+<table class="pure-table-striped"  *ngIf="client">
+        <tr>
+            <th>Account Name :</th>
+            <td> {{client.name}}</td>
+        </tr>
+        <tr>
+            <th>Email :</th>
+            <td> {{client.email}}</td>
+        </tr>
+        <tr>
+            <th>Amount :</th>
+            <td> {{client.amount}} €</td>
+        </tr>
+
+</table>
+
+

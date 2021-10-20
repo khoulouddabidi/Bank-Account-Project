@@ -1,0 +1,33 @@
+<h2 class="row">Operation</h2>
+
+<div class="row">
+
+<table class="table_minima" *ngIf="client">
+    <tr>
+        <th>Account name :</th>
+        <td>{{client.name}}</td> 
+    </tr>
+    <tr>
+        <th>Amount :</th>
+        <td>{{client.amount}}€</td>
+    </tr>
+</table>
+
+<br>
+
+    <div class="col-sm-4 col-lg-4 col-md-4" *ngIf="client">
+      <form>
+        <div class="form-group">
+          <label for="amount">Amount :</label>
+          <input type="number" class="form-control" id="nom"  step="10" min="10" [(ngModel)]="amount" name="inscAmount">
+        </div>
+
+        <button type="submit" class="btn btn-primary" (click)="toDoDeposit()">Deposit</button>
+        <button type="submit" class="btn btn-primary" (click)="toDoWithdrawal()">Withdrawal</button>
+        
+
+        <div class="bg-success">{{validation}}</div>
+        <div class="bg-danger">{{errors}}</div>
+      </form>
+    </div>
+  </div>

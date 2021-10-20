@@ -1,0 +1,42 @@
+<h2 class="row">History</h2>
+
+<table class="table" *ngIf="operations">
+    <tr>
+        <th>Account name :</th>
+        <td>{{client.name}}</td> 
+    </tr>
+    <tr>
+        <th>Amount :</th>
+        <td>{{client.amount}}€</td>
+    </tr>
+</table>
+
+<br>
+
+
+<br>
+
+<table *ngIf="operations" class="table">
+            <tr>
+            <th>#</th>
+            <th>Amount</th> 
+            <th>Type Operation</th>
+            <th>Date Operation</th>
+            </tr>
+            <!--<tr *ngFor="let operation of operations; let i = index">-->
+            <tr *ngFor="let operation of operations | paginate: {itemsPerPage: 5, currentPage:page, id: '1'}; let i = index">
+                <td>{{i+1}}</td>
+            <td>{{operation.amount}} €</td>
+            <td *ngIf="operation.type_op === 'D'">Deposit</td>
+            <td *ngIf="operation.type_op === 'W'">Withdrawal</td>
+            <td>{{operation.dateOperation | date:'medium'}}</td>
+            </tr>
+</table>
+<pagination-controls (pageChange)="page = $event" id="1"
+        maxSize="5"
+        directionLinks="true"
+        autoHide="true"
+        previousLabel="Prev"
+        nextLabel="Next">
+</pagination-controls>
+

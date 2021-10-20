@@ -1,0 +1,12 @@
+/* You can add global styles to this file, and also import other style files */
+body {
+  font: normal medium/1.4 sans-serif;
+}
+
+.row {
+    border-collapse: collapse;
+    margin-left: auto;
+    margin-right: auto;
+
+    width: 80%;
+}
